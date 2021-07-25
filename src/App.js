@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { BrowserRouter as Router } from "react-router-dom";
+import BaseRouter from "./routes";
+
 //import './App.css';
 import {testAction} from "./store/actions/test";
 
@@ -21,15 +24,17 @@ class App extends Component {
 
   render() {
     return (
-      
-      <LayoutComponent> 
+      <Router>
+      <LayoutComponent {...this.props}> 
 <div>
+  <BaseRouter />
         <h1>  this is where everything start </h1> 
         
         <h1>  {this.props.description} </h1> 
 
         </div>
      </LayoutComponent>
+     </Router>
     );
   }
 }
