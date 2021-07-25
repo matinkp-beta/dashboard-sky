@@ -1,16 +1,19 @@
 import React, { Component } from "react";
-
+import { connect } from "react-redux";
 import './App.css';
-import AvatarDisplay from "./components/avatar"
-import { UserOutlined } from '@ant-design/icons';
-import UploadPic from './components/upload'
-import 'antd/dist/antd.css'
-import Logo from "./index.jpg";
-import Logo1 from "./logo.jpg";
-import Tel from "./telegram.png"
-import { Image } from 'antd';
+import {testAction} from "./store/actions/test";
 
-export default class App extends Component {
+import 'antd/dist/antd.css'
+
+
+
+
+
+
+class App extends Component {
+  componentDidMount() {
+    this.props.test();
+  }
   constructor(props) {
     super(props);
   }
@@ -22,6 +25,7 @@ export default class App extends Component {
       <div className="App" style={{bottom:"0px"}}>
         <h1 style={{color:"white"}}>  this is where everything start </h1> 
         
+        <h1 style={{color:"white"}}>  {this.props.description} </h1> 
 
        
       </div>
@@ -29,3 +33,21 @@ export default class App extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+   description: state.test.description,
+    
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+   test: () => dispatch(testAction())
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
