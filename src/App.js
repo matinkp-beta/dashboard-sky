@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import './App.css';
+//import './App.css';
 import {testAction} from "./store/actions/test";
 
 import 'antd/dist/antd.css'
 
-
+// components 
+import LayoutComponent from "./components/avatar"
 
 
 
@@ -20,16 +21,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App-root">
       
-      <div className="App" style={{bottom:"0px"}}>
-        <h1 style={{color:"white"}}>  this is where everything start </h1> 
+      <LayoutComponent> 
+<div>
+        <h1>  this is where everything start </h1> 
         
-        <h1 style={{color:"white"}}>  {this.props.description} </h1> 
+        <h1>  {this.props.description} </h1> 
 
-       
-      </div>
-      </div>
+        </div>
+     </LayoutComponent>
     );
   }
 }
