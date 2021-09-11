@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 
-import Test from "./components/upload";
+import Test from "./components/dasboard";
 
 const BaseRouter = () => (
   <div>
