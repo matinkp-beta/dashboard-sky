@@ -1,0 +1,32 @@
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+self["webpackHotUpdatetest"]("main",{
+
+/***/ "./src/App.js":
+/*!********************!*\
+  !*** ./src/App.js ***!
+  \********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ App)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.css */ \"./src/App.css\");\n/* harmony import */ var _components_avatar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/avatar */ \"./src/components/avatar.js\");\n/* harmony import */ var _components_upload__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/upload */ \"./src/components/upload.js\");\n/* harmony import */ var antd_dist_antd_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antd/dist/antd.css */ \"./node_modules/antd/dist/antd.css\");\n/* harmony import */ var _index_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./index.jpg */ \"./src/index.jpg\");\n/* harmony import */ var _logo_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./logo.jpg */ \"./src/logo.jpg\");\n/* harmony import */ var _telegram_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./telegram.png */ \"./src/telegram.png\");\n\n\n\n\n\n\n\n\n\n\nclass App extends react__WEBPACK_IMPORTED_MODULE_0__.Component {\n  constructor(props) {\n    super(props);\n  }\n\n  render() {\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n      className: \"App-root\"\n    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n      className: \"App\",\n      style: {\n        bottom: \"0px\"\n      }\n    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"h1\", {\n      style: {\n        color: \"white\"\n      }\n    }, \"  this is where everything start \"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_upload__WEBPACK_IMPORTED_MODULE_3__.default, null)));\n  }\n\n}\n\n//# sourceURL=webpack://test/./src/App.js?");
+
+/***/ })
+
+},
+/******/ function(__webpack_require__) { // webpackRuntimeModules
+/******/ "use strict";
+/******/ 
+/******/ /* webpack/runtime/getFullHash */
+/******/ (() => {
+/******/ 	__webpack_require__.h = () => ("a36af016c2ddfe6450f1")
+/******/ })();
+/******/ 
+/******/ }
+);
