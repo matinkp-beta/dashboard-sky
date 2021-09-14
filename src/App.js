@@ -28,9 +28,7 @@ class App extends Component {
       <LayoutComponent {...this.props}> 
 <div>
   <BaseRouter />
-        <h1>  this is where everything start </h1> 
         
-        <h1>  {this.props.description} </h1> 
 
         </div>
      </LayoutComponent>

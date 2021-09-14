@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import {Gauge} from '@ant-design/charts';
-import { Switch ,Empty,Select} from 'antd';
+import { Switch ,Empty,Select,Button} from 'antd';
+import { DownloadOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
 import {chartDataAction} from  "../store/actions/chart"
 import { Row, Col } from 'antd';
 import TableData from "./table";
 import Charts from './charts';
+import { SliderCustom } from './slider';
+import Switches from './switchs';
 
 const { Option } = Select;
 function Test(props) {
@@ -14,29 +17,16 @@ function Test(props) {
   const [isempty, setIsEmpty]= useState(true)
 useEffect(()=>{
   props.chart()
-  console.log(("helllooooo"));
 }, [])
 function handleChangeSelect(value) {
-  console.log(`selected ${value}`);
   setValue(value)
 }
 
 
-  function onChange(checked) {
-    
+function onChange(checked) {    
     setType(checked)
-    
   }
-  console.log(props.data);
   
-  var config1 = {
-    percent: 0.25,
-    outline: {
-      border: 4,
-      distance: 8,
-    },
-    wave: { length: 128 },
-  };
   var config2 = {
     percent: 0.75,
     
@@ -65,6 +55,7 @@ function handleChangeSelect(value) {
       },
     },
   };
+
   return (
   <div>
     <Row>
@@ -104,11 +95,25 @@ function handleChangeSelect(value) {
   <Select defaultValue="area" style={{ width: 120 }} onChange={handleChangeSelect}>
       <Option value="line">Line</Option>
       <Option value="area">Area</Option>
-      
       <Option value="column">Columns</Option>
     </Select>
   </Row>
+    <br/><br/>
+    <Row>
+      <Col span={12} >
+      <SliderCustom  />
+      </Col>
+      <Col span={5} offset={2}>
+      <Switches  />
+      </Col>
+      
+      
+    </Row>
+    <br/><br/>
 
+    <Button type="primary" shape="round" icon={<DownloadOutlined />} size="large">
+          Download Log
+        </Button>
   </div>
   );
 };
