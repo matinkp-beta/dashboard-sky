@@ -88,18 +88,14 @@ function handleChangeSelect(value) {
   <div>
     <Row>
     <Col span={6}>
-    <Column {...config} autoFit={false} width={200} height={150} /> 
     </Col>
     <Col span={6} >
 
-  <Area {...config} autoFit={false} width={200} height={150} /> 
   </Col>
   <Col span={6}>
 
-  <Line {...config} autoFit={false} width={200} height={150} />
   </Col>
   <Col span={6}>
-  <Gauge {...config2} autoFit={true} width={200} height={150} />
 
   </Col>
 
@@ -110,24 +106,43 @@ function handleChangeSelect(value) {
   <br/>
 
 
-    <Row>
+    <Row justify="left">
     <Col span={15} >
-    
+    <Row justify="center">
+    <Col span={12} >
+    <Liquid {...config1} autoFit={false} width={150} height={150} />
+    </Col>
+    <Col span={12} >
+    <Gauge {...config2} autoFit={false} width={150} height={150} />
+
+    </Col>
+    </Row>
     <Area {...config}  /> 
-
-
-  </Col>
-  <Col span={7} offset={2}>
-    <TableData />
-  </Col>
-
-  <Select defaultValue="area" style={{ width: 120 }} onChange={handleChangeSelect}>
+    <Select defaultValue="area" style={{ width: 120 }} onChange={handleChangeSelect}>
       <Option value="line">Line</Option>
       <Option value="area">Area</Option>
       
       <Option value="columns">Columns</Option>
     </Select>
+
+
+  </Col>
+  <Col span={7} offset={2}>
+  <Column {...config} autoFit={false} width={200} height={150} /> 
+<br/>
+<br/>
+
+  <Area {...config} autoFit={false} width={200} height={150} /> 
+  <br/><br/>
+
+  <Line {...config} autoFit={false} width={200} height={150} />
+  <br/><br/>
+  
+  </Col>
+
+ 
   </Row>
+  <TableData />
 
   </div>
   );

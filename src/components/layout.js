@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu, Breadcrumb ,Affix} from 'antd';
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
 
 const { SubMenu } = Menu;
@@ -14,14 +14,16 @@ export default class LayoutComponent extends React.Component {
   render() {
     return (
      <Layout>
+       <Affix offsetTop={0}>
     <Header className="header">
       <div className="logo" />
-      <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+      <Menu theme="dark" mode="horizontal" >
         <Menu.Item key="1">Home</Menu.Item>
         <Menu.Item key="2">Articles</Menu.Item>
         <Menu.Item key="3">About us</Menu.Item>
       </Menu>
     </Header>
+    </Affix>
     <Layout >
       <Sider width={200}  className="site-layout-background">
         <Menu
