@@ -1,23 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import {Gauge} from '@ant-design/charts';
+import { Area , Line ,Liquid,Column,Gauge} from '@ant-design/charts';
 import { Switch ,Empty,Select} from 'antd';
 import { connect } from 'react-redux';
 import {chartDataAction} from  "../store/actions/chart"
 import { Row, Col } from 'antd';
 import TableData from "./table";
-import Charts from './charts';
+
 
 const { Option } = Select;
-function Test(props) {
+function Dashboard3(props) {
   const [type,setType] = useState(false)
-  const [Value,setValue]= useState("area")
+  const [Value,setValue]= useState()
   const [isempty, setIsEmpty]= useState(true)
 useEffect(()=>{
   props.chart()
   console.log(("helllooooo"));
+  document.title="Dashboard3"
+
 }, [])
 function handleChangeSelect(value) {
   console.log(`selected ${value}`);
+
   setValue(value)
 }
 
@@ -28,7 +31,25 @@ function handleChangeSelect(value) {
     
   }
   console.log(props.data);
-  
+  var config = {
+    data: props.data,
+    xField: 'year',
+    yField: 'value',
+    
+    xAxis: {
+      range: [0, 1],
+      
+    },
+    
+    smooth: true,
+    theme: 'light',
+    animation: {
+      appear: {
+        animation: 'path-in',
+        duration: 5000,
+      },
+    },
+  };
   var config1 = {
     percent: 0.25,
     outline: {
@@ -69,15 +90,15 @@ function handleChangeSelect(value) {
   <div>
     <Row>
     <Col span={6}>
-    <Charts data={props.data} typeChart="column" autoFit={false} width={200} height={150} /> 
+    <Column {...config} autoFit={false} width={200} height={150} /> 
     </Col>
     <Col span={6} >
 
-    <Charts data={props.data} typeChart="area" autoFit={false} width={200} height={150} /> 
+  <Area {...config} autoFit={false} width={200} height={150} /> 
   </Col>
   <Col span={6}>
 
-  <Charts data={props.data} typeChart="line" autoFit={false} width={200} height={150} /> 
+  <Line {...config} autoFit={false} width={200} height={150} />
   </Col>
   <Col span={6}>
   <Gauge {...config2} autoFit={true} width={200} height={150} />
@@ -94,7 +115,8 @@ function handleChangeSelect(value) {
     <Row>
     <Col span={15} >
     
-    <Charts data={props.data} typeChart={Value} />
+    <Area {...config}  /> 
+
 
   </Col>
   <Col span={7} offset={2}>
@@ -105,7 +127,7 @@ function handleChangeSelect(value) {
       <Option value="line">Line</Option>
       <Option value="area">Area</Option>
       
-      <Option value="column">Columns</Option>
+      <Option value="columns">Columns</Option>
     </Select>
   </Row>
 
@@ -126,6 +148,6 @@ const mapDispatchToProps = dispatch =>
   }
 }
 export default connect(mapStateToProps,
-  mapDispatchToProps)(Test);
+  mapDispatchToProps)(Dashboard3);
 
 

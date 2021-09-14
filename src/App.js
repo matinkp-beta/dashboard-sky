@@ -9,7 +9,7 @@ import {testAction} from "./store/actions/test";
 import 'antd/dist/antd.css'
 
 // components 
-import LayoutComponent from "./components/avatar"
+import LayoutComponent from "./components/layout"
 
 
 
